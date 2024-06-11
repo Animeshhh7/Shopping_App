@@ -1,45 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:quick_cart/themes/light_mode.dart'; 
+import 'pages/intro_page.dart';
 
+// Entry point of the app
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp()); 
 }
 
+// Main application widget
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Basic Layout Sample',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home Page'),
-      ),
-      body: const Center(
-        child: Text(
-          'Welcome to Flutter!',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Action to be performed on button press
-        },
-        child: const Icon(Icons.add),
-      ),
+      debugShowCheckedModeBanner: false, // Disable the debug banner
+      home: const IntroPage(), // Set IntroPage as the home page
+      theme: lightMode, // Apply the light mode theme
     );
   }
 }
