@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quick_cart/components/my_button.dart';
+
+import 'shop_page.dart';
 
 // Widget for the intro page
 class IntroPage extends StatelessWidget {
@@ -43,13 +44,36 @@ class IntroPage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 40), // Spacer to add vertical space
+            const SizedBox(height: 20), // Spacer to add vertical space
 
-            // Custom button widget
-            MyButton(
-              onTap: () {}, // Define button tap action
-              child: const Icon(Icons.arrow_forward), // Child widget inside the button (an arrow icon)
+           // Arrow Button
+            TextButton(
+              onPressed: () {
+                // Navigate to the ShopPage when the button is pressed
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ShopPage()),
+                );
+              },
+              
+              child: Container(
+                padding: const EdgeInsets.all(10), // Padding around the icon
+                decoration: const BoxDecoration(
+                  color: Colors.white, // Background color
+                  shape: BoxShape.circle, // Shape of the container
+                ),
+            
+                child: const Icon(
+                  Icons.arrow_forward,
+                  color: Colors.black, // Set arrow color to black
+                  size: 30, // Adjust size if needed
+                  weight: 900, // Make the icon bold
+                ), 
+              ),
             ),
+
+            
+
           ],
         ),
       ),
