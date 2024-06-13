@@ -7,17 +7,48 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       backgroundColor: Theme.of(context).colorScheme.background,
-      child: const Column(
+      child: Column(
         children: [
 
-          // drawer header (logo)
+          // Drawer header (logo)
+          Container(
+            padding: const EdgeInsets.all(16.0),
+            color: Theme.of(context).colorScheme.background,
+            child: Center(
+              child: Icon(
+                Icons.shopping_bag,
+                size: 70,
+                color: Theme.of(context).colorScheme.inversePrimary,
+              ),
+            ),
+          ),
 
-          // shop tile
+          // Shop tile
+          ListTile(
+            leading: Icon(Icons.shop),
+            title: Text('Shop'),
+            onTap: () {
+              // Navigate to shop page
+            },
+          ),
 
-          // cart tile
+          // Cart tile
+          ListTile(
+            leading: Icon(Icons.shopping_cart),
+            title: Text('Cart'),
+            onTap: () {
+              // Navigate to cart page
+            },
+          ),
 
-          // exit shop tile
-          
+          // Exit shop tile
+          ListTile(
+            leading: Icon(Icons.exit_to_app),
+            title: Text('Exit'),
+            onTap: () {
+              // Exit the shop
+            },
+          ),
         ],
       ),
     );
