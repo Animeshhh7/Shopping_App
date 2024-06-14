@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quick_cart/pages/cart_page.dart';
+import 'package:quick_cart/pages/intro_page.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -73,7 +74,7 @@ class MyDrawer extends StatelessWidget {
                   Navigator.of(context).pop(); // Close the drawer
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CartPage()),
+                    MaterialPageRoute(builder: (context) => const CartPage()),
                   );
                 },
               ),
@@ -99,6 +100,11 @@ class MyDrawer extends StatelessWidget {
                 ),
                 onTap: () {
                   Navigator.of(context).pop(); // Close the drawer
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => const IntroPage()),
+                    (Route<dynamic> route) => false,
+                  );
                 },
               ),
             ),

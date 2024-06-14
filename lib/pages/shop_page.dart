@@ -14,12 +14,7 @@ class ShopPage extends StatelessWidget {
         title: const Text("Shop Page"),
       ),
       drawer: const MyDrawer(), // Use the MyDrawer widget here
-      body: const Center(
-        child: Text(
-          "Welcome to the Shop!",
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
+      backgroundColor: Theme.of(context).colorScheme.background,
     );
   }
 }
