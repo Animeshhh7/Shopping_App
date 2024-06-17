@@ -1,21 +1,32 @@
 import 'package:quick_cart/models/product.dart';
 
-class Shop {
+class Shop extends ChangeNotifier {
   // Products for sale
   final List<Product> _shop = [
+    // product 1
     Product(
       name: "Product 1",
       price: 100.0,
       description: "This is the first product description.",
-      imagepath: "assets/images/product1.jpg",
     ),
+    // product 2
     Product(
       name: "Product 2",
-      price: 150.0,
+      price: 200.0,
       description: "This is the second product description.",
-      imagepath: "assets/images/product2.jpg",
     ),
-    // Add more products as needed
+    // product 3
+    Product(
+      name: "Product 3",
+      price: 300.0,
+      description: "This is the third product description.",
+    ),
+    // product 4
+    Product(
+      name: "Product 4",
+      price: 400.0,
+      description: "This is the fourth product description.",
+    ),
   ];
 
   // User cart
@@ -28,12 +39,14 @@ class Shop {
   List<Product> get cart => _cart;
 
   // Add items to cart
-  void addToCart(Product product) {
-    _cart.add(product);
+  void addToCart(Product item) {
+    _cart.add(item);
+    notifyListeners();
   }
 
   // Remove items from cart
-  void removeFromCart(Product product) {
-    _cart.remove(product);
+  void removeFromCart(Product item) {
+    _cart.remove(item);
+    notifyListeners();
   }
 }
