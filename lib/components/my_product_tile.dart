@@ -12,11 +12,12 @@ class MyProductTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: avoid_unnecessary_containers
     return Container(
       child: Column(
         children: [
           // product image
-          Icon(Icons.favorite),
+          const Icon(Icons.favorite),
 
           // product name
           Text(product.name),

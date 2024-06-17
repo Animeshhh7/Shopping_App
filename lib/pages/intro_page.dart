@@ -52,7 +52,7 @@ class IntroPage extends StatelessWidget {
                 // Navigate to the ShopPage when the button is pressed
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ShopPage()),
+                  MaterialPageRoute(builder: (context) => const ShopPage()),
                 );
               },
               

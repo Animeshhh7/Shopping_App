@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:quick_cart/models/product.dart';
 
 class Shop extends ChangeNotifier {
